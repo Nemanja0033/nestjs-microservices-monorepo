@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
 import { ClientsModule, Transport } from '@nestjs/microservices';
-import { microservicesConfig } from 'config/microservices-config';
+import { microservicesConfig } from 'common/config/microservices-config';
 
 // Configuring the gateway module to connect with auth microservice via TCP.
 @Module({

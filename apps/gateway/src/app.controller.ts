@@ -1,7 +1,7 @@
 import { Body, Controller, Get, HttpException, HttpStatus, Inject, Post } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { MessagePatterns } from 'core/constants/message-patterns';
-import { RegisterUserDto } from 'core/dtos/register-user-dto';
+import { MessagePatterns } from 'common/core/constants/message-patterns';
+import { RegisterUserDto } from 'common/core/dtos/register-user-dto';
 import { firstValueFrom } from 'rxjs';
 
 /* 
