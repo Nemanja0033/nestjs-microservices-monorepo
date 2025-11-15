@@ -6,6 +6,7 @@ import { UserController } from './controllers/user.controller';
 import { User, UserSchema } from './schema/user.schema';
 import { UserService } from './services/user.service';
 import { UserRepository } from './repositories/user.repository';
+import { TerminusModule } from '@nestjs/terminus';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { UserRepository } from './repositories/user.repository';
       isGlobal: true
     }),
     MongooseModule.forRoot(databaseConfig.uri as any),
-    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }])
+    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
+    TerminusModule
   ],
   controllers: [UserController],
   providers: [UserService, UserRepository],
