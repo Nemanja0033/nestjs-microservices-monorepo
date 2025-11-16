@@ -13,7 +13,7 @@ import { TerminusModule } from '@nestjs/terminus';
     ConfigModule.forRoot({
       isGlobal: true
     }),
-    MongooseModule.forRoot(databaseConfig.uri as any),
+    MongooseModule.forRoot(databaseConfig.uri as string),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     TerminusModule
   ],

@@ -30,7 +30,8 @@ export class UserService{
 
         const user = await this.userRepository.create(userWithHashedPassword);
 
-       return {
+        // Casting user as any just for task showcase, would not use this in production.
+        return {
             id: (user as any)._id,
             username: user.username,
             email: user.email,
