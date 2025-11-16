@@ -1,0 +1,12 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY tsconfig*.json ./
+COPY . .
+
+RUN npm install
+RUN npx nest build
+
+CMD ["npm", "run", "start:auth"]
