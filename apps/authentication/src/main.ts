@@ -2,7 +2,6 @@ import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { AuthenticationModule } from './authentication.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { AppModule } from 'apps/gateway/src/app.module';
 import { microservicesConfig } from 'common/config/microservices-config';
 import { ValidationPipe } from '@nestjs/common';
 

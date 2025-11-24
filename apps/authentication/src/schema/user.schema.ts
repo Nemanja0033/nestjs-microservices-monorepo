@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Document } from "mongoose";
 
 // * Mongoose schema for declaring models for data.
 export type UserDocument = User & Document;

@@ -5,6 +5,7 @@ import { RegisterUserDto } from "common/core/dtos/register-user-dto";
 import { User, UserDocument } from "../schema/user.schema";
 
 // * UserRepository containing methods to interact with data base, this repository will be used in UserService for handling bussines logic.
+// * InjectModel allows us to interact with MongoDB collections.
 @Injectable()
 export class UserRepository {
     constructor(@InjectModel(User.name) private userModel: Model<UserDocument>){}

@@ -13,6 +13,7 @@ export class UserService{
         const existingUserByEmail = await this.userRepository.findByEmail(registerUserDto.email);
 
         if(existingUserByEmail){
+            // In microservices RcpException is used to handle and throw exceptions.
             throw new RpcException({ status: 409, message: `Email ${registerUserDto.email} already exist`});
         }
 
@@ -32,7 +33,7 @@ export class UserService{
 
         // Casting user as any just for task showcase, would not use this in production.
         return {
-            id: (user as any)._id,
+            id: (user as any)._id.toString(),
             username: user.username,
             email: user.email,
             createdAt: (user as any).createdAt,
@@ -55,5 +56,4 @@ export class UserService{
             throw new RpcException({ status: 500, message: 'Failed to fetch users' });
         }
     }
-
 }
